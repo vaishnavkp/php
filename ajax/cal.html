@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>calculator</title>
+	<style>
+		table,td {
+			border:4px solid black;
+
+		}
+	 </style>
+</head>
+<body>
+	<center>	
+		<table>
+		<tr>
+			<td colspan="4"><input type="text" id="op"></td>
+		</tr>
+		<tr>
+			<td><center><input type="submit" id="1" value="1" onclick="op.value+='1'"></center></td>
+			<td><center><input type="submit" id="2" value="2" onclick="op.value+='2'"></center></td>
+			<td><center><input type="submit" id="3" value="3" onclick="op.value+='3'"></center></td>
+			<td><center><input type="submit" id="4" value="4" onclick="op.value+='4'"></center></td>
+		</tr>
+		<tr>
+			<td><center><input type="submit" id="5" value="5" onclick="op.value+='5'"></center></td>
+			<td><center><input type="submit" id="6" value="6" onclick="op.value+='6'"></center></td>
+			<td><center><input type="submit" id="7" value="7" onclick="op.value+='7'"></center></td>
+			<td><center><input type="submit" id="8" value="8" onclick="op.value+='8'"></center></td>
+		</tr>
+		<tr>
+			<td><center><input type="submit" id="9" value="9" onclick="op.value+='9'"></center></td>
+			<td><center><input type="submit" id="0" value="0" onclick="op.value+='0'"></center></td>
+			<td><center><input type="submit" id="=" value="="></center></td>
+			<td><center><input type="submit" id="+" value="+"></center></td>
+		</tr>
+		<tr>
+			<td><center><input type="submit" id="-" value="-"></center></td>
+			<td><center><input type="submit" id="*" value="*"></center></td>
+			<td><center><input type="submit" id="/" value="/"></center></td>
+			<td><center><input type="submit" id="clr" value="C"></center></td>
+		</tr>
+
+	</table>
+	<script>
+		var ip1;
+		var ip2;
+		var c;
+		document.getElementById('+').onclick = function(){
+			ip1 = document.getElementById('op').value;
+			document.getElementById('op').value = "";
+			c = 1;
+		};
+		document.getElementById('-').onclick = function(){
+			ip1 = document.getElementById('op').value;
+			document.getElementById('op').value = "";
+			c = 2;
+		};
+		document.getElementById('*').onclick = function(){
+			ip1 = document.getElementById('op').value;
+			document.getElementById('op').value = "";
+			c = 3;
+		};
+		document.getElementById('/').onclick = function(){
+			ip1 = document.getElementById('op').value;
+			document.getElementById('op').value = "";
+			c = 4;
+		};
+		document.getElementById('clr').onclick = function(){
+			ip1 = document.getElementById('op').value;
+			document.getElementById('op').value = "";
+			c = 5;
+		};
+
+		document.getElementById('=').onclick = function(){
+			ip2 = document.getElementById('op').value;
+			document.getElementById('op').value = ""; 
+			switch(c){
+				case 1:
+				{
+                   document.getElementById('op').value = parseInt(ip1)+parseInt(ip2);
+                   break;
+				}
+				case 2:
+				{
+					document.getElementById('op').value = parseInt(ip1)-parseInt(ip2);
+					break;
+				}
+				case 3:
+				{
+					document.getElementById('op').value = parseInt(ip1)*parseInt(ip2);
+					break;
+				}
+				case 4:
+				{
+					document.getElementById('op').value = parseInt(ip1)/parseInt(ip2);
+					break;
+				}
+				case 5:
+				{
+					document.getElementById('op').value = "";
+									}
+			}
+		};
+	</script>
+
+
+</center>
+
+</body>
+</html>
